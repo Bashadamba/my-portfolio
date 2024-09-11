@@ -1,0 +1,248 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --secondary-color: #666666;
+    --link-color: #000000;
+    --active-link-color: #000000;
+    --date-color: #999999;
+    --button-bg: #000000;
+    --button-text: #ffffff;
+    --modal-bg: rgba(0, 0, 0, 0.4);
+    --close-icon-bg: #f1f1f1;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+h1.bookshelf-title {
+    font-size: var(--title-font-size);
+    color: var(--title-color);
+    margin: 0;
+    text-align: left;
+}
+
+header p {
+    font-size: 14px;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+h2 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.blog-posts article {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-posts h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.blog-posts p {
+    font-size: 14px;
+    margin: 0 0 5px 0;
+    color: var(--secondary-color);
+}
+
+.blog-posts .date {
+    font-size: 14px;
+    color: var(--date-color);
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.dark-mode-toggle:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.read-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    align-self: flex-end;
+}
+
+.read-button:hover {
+    opacity: 0.8;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal-bg);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: none;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-family: inherit;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.close:hover {
+    background-color: var(--close-icon-bg);
+}
+
+.post-title {
+    margin-bottom: 5px;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.post-meta .author-icon {
+    margin-right: 5px;
+}
+
+.post-meta .author {
+    margin-right: 10px;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --secondary-color: #b3b3b3;
+    --link-color: #ffffff;
+    --active-link-color: #ffffff;
+    --date-color: #999999;
+    --button-bg: #ffffff;
+    --button-text: #000000;
+    --modal-bg: rgba(0, 0, 0, 0.7);
+    --close-icon-bg: #333333;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+body.dark-mode .modal-content {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.theme-button {
+    background-color: var(--button-bg, #000000);
+    color: var(--button-text, #ffffff);
+    border: none;
+    border-radius: 10px; /* Updated border-radius to 10px */
+    padding: 10px 30px; /* Increased padding for a larger button */
+    font-size: 12px; /* Keeping the font size the same */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+    
+    /* Centering styles */
+    display: block;
+    margin: 20px auto; /* Adjust top and bottom margin as needed */
+    width: fit-content;
+}
+
+.theme-button .home-icon {
+    margin-right: 8px; /* Spacing between the icon and the text */
+}
+
+.theme-button:hover {
+    opacity: 0.8;
+}
+
+body.dark-mode .theme-button {
+    background-color: var(--button-bg, #ffffff);
+    color: var(--button-text, #000000);
+}
