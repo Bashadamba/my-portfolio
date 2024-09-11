@@ -24,7 +24,7 @@ const blogPosts = {
     
     post2: {
         title: "Blog Post Title 2",
-        content: "This is the full content of blog post 2. You can add your actual blog post content here.",
+        content: "This is the full content of blog post 2. I will add the actual blog post content here.",
         date: "2023 — 2024",
         author: "Basha Damba"
     }
