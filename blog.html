@@ -8,30 +8,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <button id="darkModeToggle" class="dark-mode-toggle">Toggle dark mode</button>
+    <button id="darkModeToggle" class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
     <div class="container">
         <header>
             <h1 class="bookshelf-title">Blog</h1>
-        </header>
-            <p>Well now I have a place to gather all my random thoughts and writing.</p>
+            <p class="blog-intro">Thoughts, stories, and ideas.</p>
         </header>
         <main>
             <section class="blog-posts">
-                <article>
-                    <div>
-                        <h3>My Game of Thrones Rewatch : Thoughts</h3>
-                        <p>This is the greatest show to ever exist, greatest story. </p>
-                        <p class="date">15th August, 2024</p>
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-header">
+                            <h3>My Game of Thrones Rewatch : Thoughts</h3>
+                            <div class="tags">
+                                <span class="tag entertainment">TV Series</span>
+                                <span class="tag review">Review</span>
+                            </div>
+                        </div>
+                        <p class="blog-excerpt">This is the greatest show to ever exist, greatest story. A deep dive into the complexities of power, loyalty, and human nature through the lens of Westeros.</p>
+                        <div class="post-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> August 15, 2024</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
                     </div>
-                    <button class="read-button" onclick="showPost('post1')">Read</button>
+                    <button class="read-button" onclick="showPost('post1')">Read More</button>
                 </article>
-                <article>
-                    <div>
-                        <h3>Blog Post Title 2</h3>
-                        <p>Brief description or excerpt from the blog post.</p>
-                        <p class="date">2023 — 2024</p>
+
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-header">
+                            <h3>The Art of Minimal Design</h3>
+                            <div class="tags">
+                                <span class="tag design">Design</span>
+                                <span class="tag tech">Web</span>
+                            </div>
+                        </div>
+                        <p class="blog-excerpt">Exploring how less can be more in modern web design, and why minimalism continues to dominate digital aesthetics.</p>
+                        <div class="post-meta">
+                            <span class="date"><i class="far fa-calendar-alt"></i> January 5, 2024</span>
+                            <span class="read-time"><i class="far fa-clock"></i> 3 min read</span>
+                        </div>
                     </div>
-                    <button class="read-button" onclick="showPost('post2')">Read</button>
+                    <button class="read-button" onclick="showPost('post2')">Read More</button>
                 </article>
             </section>
         </main>
@@ -43,9 +63,10 @@
             <div id="postContent"></div>
         </div>
     </div>
+
     <div class="button-container">
         <button class="theme-button" onclick="window.location.href='index.html'">
-            <span class="home-icon">🏠</span> Go Home
+            <i class="fas fa-home"></i> Home
         </button>
     </div>
     
