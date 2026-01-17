@@ -25,4 +25,36 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update button text
         darkModeToggle.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
     });
+
+    // Journal Modal Functionality
+    const journalLink = document.getElementById('journalLink');
+    const journalModal = document.getElementById('journalModal');
+    const journalClose = document.querySelector('.journal-close');
+
+    if (journalLink && journalModal) {
+        journalLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            journalModal.style.display = 'block';
+            setTimeout(() => {
+                journalModal.classList.add('show');
+            }, 10);
+        });
+
+        journalClose.addEventListener('click', () => {
+            closeJournalModal();
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === journalModal) {
+                closeJournalModal();
+            }
+        });
+    }
+
+    function closeJournalModal() {
+        journalModal.classList.remove('show');
+        setTimeout(() => {
+            journalModal.style.display = 'none';
+        }, 300);
+    }
 });
